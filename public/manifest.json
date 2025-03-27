@@ -16,6 +16,12 @@
       "js": ["content.js"]
     }
   ],
+  "web_accessible_resources": [
+    {
+      "resources": ["fonts/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "host_permissions": [
     "https://api.coingecko.com/*"
   ]
