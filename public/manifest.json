@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Crypto Tracker",
+  "version": "1.0",
+  "description": "نمایشگر قیمت ارزهای دیجیتال برتر",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["tabs", "storage", "alarms"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://api.coingecko.com/*"
+  ]
+}
