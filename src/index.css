@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'Vazir';
+  src: url('/fonts/Vazir.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('/fonts/Vazir-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vazir';
+  src: url('/fonts/Vazir-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,12 +29,15 @@
 body {
     width: 400px;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    font-family: 'Vazir', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
         'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
     overflow: hidden;
+    direction: rtl;
+    font-feature-settings: "ss01" on, "ss02" on, "cv01" on, "cv02" on;
+    letter-spacing: -0.5px;
 }
 
 code {
@@ -23,4 +50,62 @@ code {
 
 .height {
     height: 260px;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* RTL Input Styles */
+input[type="text"] {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Vazir', sans-serif;
+}
+
+input[type="text"]::placeholder {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Vazir', sans-serif;
+}
+
+/* Persian Font Styles */
+.persian-font {
+    font-family: 'Vazir', sans-serif;
+    font-feature-settings: "ss01" on, "ss02" on, "cv01" on, "cv02" on;
+    letter-spacing: -0.5px;
+}
+
+.persian-font-light {
+    font-weight: 300;
+}
+
+.persian-font-regular {
+    font-weight: 400;
+}
+
+.persian-font-medium {
+    font-weight: 500;
+}
+
+.persian-font-semibold {
+    font-weight: 600;
+}
+
+.persian-font-bold {
+    font-weight: 700;
 }
